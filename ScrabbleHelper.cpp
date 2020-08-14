@@ -81,8 +81,6 @@ int main()
             std::cout << "Comme il y a beaucoup de lettres, cette operation peut prendre du temps. (" + std::to_string((int)pow(size, size)) + " mots a tester)." << std::endl;
         }
 
-        std::vector <std::string> deja_essaye;
-
         for (int i(0); i <= ((size + 1) * std::pow(10, size - 1)); i++) {
             std::string r_s = std::to_string(i);
             bool can(true);
@@ -92,12 +90,18 @@ int main()
             }
             if (can) {
                 std::string finals;
+                bool invalide(false);
+                int last(0);
                 for (int y(0); y < r_s.length(); y++) {
                     int z = (int)r_s[y] - 48;
-                    if (z != 0)
+                    if (z != 0 && z != last) {
                         finals.push_back(lettres[z - 1]);
+                        last = z;
+                    }
+                    else
+                        invalide = true;
                 }
-                if (!contains(deja_essaye, finals)) {
+                if (!invalide) {
                     //On verifie qu'il n'y a pas deux fois la meme lettre
                     bool repete = false;
                     for (int j(0); j < finals.length(); j++) {
@@ -113,7 +117,6 @@ int main()
 
                     if (!repete && contains(dictionnaire[finals[0]], finals)) {
                         std::cout << "Possibilite : " << finals << std::endl;
-                        deja_essaye.push_back(finals);
                     }
 
                 }
