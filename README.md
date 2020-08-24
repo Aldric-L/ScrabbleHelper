@@ -9,3 +9,4 @@ Projet sous licence MIT 100% libre en C++ puisque ce projet est evidemment un si
 
 ### TODO list:
 - Compiler sous linux.
+- Toujours plus optimiser le processus et envisager le mutlithreading
