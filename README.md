@@ -1,4 +1,4 @@
-# ScrabbleHelper - Un utilitaire pour trouver des mots au scrabble
+# ScrabbleHelper v2 - Un utilitaire pour trouver des mots au scrabble
 Grâce à lui, gagnez toutes vos parties au célèbre jeu "Scrabble" !
 
 ## Installation
